@@ -92,7 +92,7 @@ class TestEndPoints(TestCase):
     def test_request_and_profile_sql_detail(self):
         fields = {
             'profile_id': 'profile_id',
-            'sql_id': 'sqlquery_id',
+            # 'sql_id': 'sqlquery_id',
             'request_id': 'request_id'
         }
         kwargs = random.choice(models.Profile.objects.extra(select=fields).annotate(num=Count('queries')).values(*fields.keys()).filter(request_id__isnull=False, num__gt=0))
