@@ -38,6 +38,9 @@ matrix:
   - python: '3.4'
     env: DJANGO="Django>=2.1,<2.2.0"     DB=mysql DB_NAME=mysql_db
   fast_finish: true
+services:
+  - mysql
+  - postgresql
 install:
 - travis_retry pip install -q $DJANGO
 - travis_retry pip install -r requirements.txt
